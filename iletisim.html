@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim | Web Teknolojileri Projesi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body class="d-flex flex-column min-vh-100 bg-light">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Web Projesi</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Hakkında</a></li>
+        <li class="nav-item"><a class="nav-link" href="cv.html">Özgeçmiş (CV)</a></li>
+        <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
+        <li class="nav-item"><a class="nav-link" href="miras.html">Mirasımız</a></li>
+        <li class="nav-item"><a class="nav-link" href="ilgi_alanlari.html">İlgi Alanlarım</a></li>
+        <li class="nav-item"><a class="nav-link active" href="iletisim.html">İletişim</a></li>
+        <li class="nav-item"><a class="nav-link text-warning" href="login.html">Giriş Yap</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container mt-5 flex-shrink-0" id="app">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="h5 mb-0">İletişim Formu</h3>
+                </div>
+                <div class="card-body">
+                    <div id="errorBox" class="alert alert-danger d-none" role="alert"></div>
+                    <div v-if="vueError" class="alert alert-danger" role="alert">{{ vueError }}</div>
+
+                    <form id="contactForm" action="iletisim.php" method="POST">
+                        
+                        <div class="mb-3">
+                            <label for="adSoyad" class="form-label">Adınız Soyadınız</label>
+                            <input type="text" class="form-control" id="adSoyad" name="adSoyad" v-model="formData.adSoyad">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-Posta Adresiniz</label>
+                            <input type="text" class="form-control" id="email" name="email" v-model="formData.email">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="telefon" class="form-label">Telefon Numaranız (Sadece Rakam)</label>
+                            <input type="text" class="form-control" id="telefon" name="telefon" v-model="formData.telefon">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="sehir" class="form-label">Şehir Seçiniz</label>
+                            <select class="form-select" id="sehir" name="sehir" v-model="formData.sehir">
+                                <option value="">Seçiniz...</option>
+                                <option value="Sakarya">Sakarya</option>
+                                <option value="İstanbul">İstanbul</option>
+                                <option value="Ankara">Ankara</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label d-block">Cinsiyetiniz</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="cinsiyet" id="erkek" value="Erkek" v-model="formData.cinsiyet">
+                                <label class="form-check-label" for="erkek">Erkek</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="cinsiyet" id="kadin" value="Kadın" v-model="formData.cinsiyet">
+                                <label class="form-check-label" for="kadin">Kadın</label>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label d-block">İlgi Alanlarınız</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="hobi1" name="hobiler[]" value="Oyun Geliştirme" v-model="formData.hobiler">
+                                <label class="form-check-label" for="hobi1">Oyun Geliştirme</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="hobi2" name="hobiler[]" value="Web Tasarım" v-model="formData.hobiler">
+                                <label class="form-check-label" for="hobi2">Web Tasarım</label>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="mesaj" class="form-label">Mesajınız</label>
+                            <textarea class="form-control" id="mesaj" name="mesaj" rows="4" v-model="formData.mesaj"></textarea>
+                        </div>
+
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button type="button" class="btn btn-warning text-dark" onclick="validateNativeJS()">Native JS ile Gönder</button>
+                            <button type="button" class="btn btn-success" @click="validateVueJS()">Vue.js ile Gönder</button>
+                            <button type="reset" class="btn btn-secondary">Temizle</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="bg-dark text-white text-center py-3 mt-auto">
+    <div class="container">
+        <p class="mb-0">&copy; 2025-2026 Bahar Dönemi - Web Teknolojileri Projesi</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    function validateNativeJS() {
+        const adSoyad = document.getElementById('adSoyad').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const telefon = document.getElementById('telefon').value.trim();
+        const sehir = document.getElementById('sehir').value;
+        const mesaj = document.getElementById('mesaj').value.trim();
+        const errorBox = document.getElementById('errorBox');
+        
+        let errors = [];
+
+        if(adSoyad === "") errors.push("Ad Soyad alanı boş bırakılamaz.");
+        
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if(email === "" || !emailRegex.test(email)) errors.push("Geçerli bir E-posta adresi giriniz.");
+        
+        const telRegex = /^[0-9]+$/;
+        if(telefon === "" || !telRegex.test(telefon)) errors.push("Telefon numarası sadece rakamlardan oluşmalıdır.");
+        
+        if(sehir === "") errors.push("Lütfen bir şehir seçiniz.");
+        if(mesaj === "") errors.push("Mesaj alanı boş bırakılamaz.");
+
+        if(errors.length > 0) {
+            errorBox.innerHTML = "(Native JS) Lütfen Hataları Düzeltin:<br>" + errors.join("<br>");
+            errorBox.classList.remove('d-none');
+        } else {
+            errorBox.classList.add('d-none');
+            document.getElementById('contactForm').submit();
+        }
+    }
+</script>
+
+<script>
+    const { createApp } = Vue;
+
+    createApp({
+        data() {
+            return {
+                formData: {
+                    adSoyad: '',
+                    email: '',
+                    telefon: '',
+                    sehir: '',
+                    cinsiyet: '',
+                    hobiler: [],
+                    mesaj: ''
+                },
+                vueError: ''
+            }
+        },
+        methods: {
+            validateVueJS() {
+                this.vueError = '';
+                document.getElementById('errorBox').classList.add('d-none'); // Native hatayı gizle
+
+                if(!this.formData.adSoyad) {
+                    this.vueError = "(Vue.js) Ad Soyad alanı boş bırakılamaz."; return;
+                }
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if(!this.formData.email || !emailRegex.test(this.formData.email)) {
+                    this.vueError = "(Vue.js) Geçerli bir E-posta adresi giriniz."; return;
+                }
+                const telRegex = /^[0-9]+$/;
+                if(!this.formData.telefon || !telRegex.test(this.formData.telefon)) {
+                    this.vueError = "(Vue.js) Telefon numarası sadece rakamlardan oluşmalıdır."; return;
+                }
+                if(!this.formData.sehir) {
+                    this.vueError = "(Vue.js) Lütfen bir şehir seçiniz."; return;
+                }
+                if(!this.formData.cinsiyet) {
+                    this.vueError = "(Vue.js) Lütfen cinsiyet seçiniz."; return;
+                }
+                if(!this.formData.mesaj) {
+                    this.vueError = "(Vue.js) Mesaj alanı boş bırakılamaz."; return;
+                }
+
+                // Hata yoksa formu gönder
+                document.getElementById('contactForm').submit();
+            }
+        }
+    }).mount('#app');
+</script>
+
+</body>
+</html>
