@@ -4,22 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>İlgi Alanlarım | Web Teknolojileri Projesi</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- Harici CSS -->
     <link rel="stylesheet" href="css/style.css">
-    
-    <style>
-        .api-card { transition: transform 0.3s ease; height: 100%; }
-        .api-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important; }
-        .api-card img { height: 350px; object-fit: cover; object-position: top; }
-        
-        /* Profil Kartları Arka Planları */
-        .steam-card { background: linear-gradient(135deg, #171a21 0%, #1b2838 100%); color: white; }
-        .mal-card { background: linear-gradient(135deg, #2e51a2 0%, #1a2e61 100%); color: white; }
-    </style>
 </head>
 <body class="d-flex flex-column min-vh-100 bg-light">
 
@@ -49,10 +36,9 @@
         <p class="lead text-muted">Oyunlar, kült animeler ve efsanevi yapımlar.</p>
     </header>
 
-    <!-- Profil Kartları -->
     <div class="row mb-5 g-4">
         <div class="col-md-6">
-            <div class="card steam-card shadow-sm border-0 rounded-4 h-100">
+            <div class="card steam-card shadow-sm border-0 rounded-4 h-100 api-card">
                 <div class="card-body p-4 d-flex align-items-center justify-content-between flex-wrap">
                     <div>
                         <h3 class="mb-1"><i class="bi bi-steam me-2"></i>Steam Profilim</h3>
@@ -67,7 +53,7 @@
             </div>
         </div>
         <div class="col-md-6">
-            <div class="card mal-card shadow-sm border-0 rounded-4 h-100">
+            <div class="card mal-card shadow-sm border-0 rounded-4 h-100 api-card">
                 <div class="card-body p-4 d-flex align-items-center justify-content-between flex-wrap">
                     <div>
                         <h3 class="mb-1"><i class="bi bi-play-btn me-2"></i>MyAnimeList</h3>
@@ -83,7 +69,6 @@
         </div>
     </div>
 
-    <!-- Oyunlar Bölümü -->
     <section class="mb-5">
         <div class="d-flex justify-content-between align-items-end border-bottom pb-2 mb-4">
             <h3 class="text-dark mb-0"><i class="bi bi-controller text-success me-2"></i>Oynadığım Oyunlar</h3>
@@ -96,18 +81,16 @@
         <div id="game-container" class="row g-4 d-none"></div>
     </section>
 
-   <!-- Filmler Bölümü (Kalıcı Vikipedi Afişleri) -->
-    <section class="mb-5">
+   <section class="mb-5">
         <div class="d-flex justify-content-between align-items-end border-bottom pb-2 mb-4">
             <h3 class="text-dark mb-0"><i class="bi bi-camera-reels text-secondary me-2"></i>Efsanevi Filmler</h3>
         </div>
         
-        <!-- Yüzüklerin Efendisi Serisi -->
         <h5 class="text-muted small text-uppercase mb-3">Yüzüklerin Efendisi Serisi</h5>
         <div class="row g-4 mb-5">
             <div class="col-lg-4 col-md-6">
                 <div class="card api-card shadow-sm border-0 rounded-3 overflow-hidden">
-                    <img src="https://upload.wikimedia.org/wikipedia/tr/c/c3/Y%C3%BCz%C3%BCk_Karde%C5%9Fli%C4%9Fi_afis.jpg" class="card-img-top" alt="Yüzük Kardeşliği">
+                    <img src="https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_FMjpg_UX1000_.jpg" class="card-img-top" alt="Yüzük Kardeşliği">
                     <div class="card-body bg-white">
                         <h5 class="card-title fw-bold">1. Yüzük Kardeşliği</h5>
                         <p class="card-text text-muted small">Çıkış Yılı: 2001</p>
@@ -116,7 +99,7 @@
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="card api-card shadow-sm border-0 rounded-3 overflow-hidden">
-                    <img src="https://upload.wikimedia.org/wikipedia/tr/5/52/%C4%B0ki_Kule_afis.jpg" class="card-img-top" alt="İki Kule">
+                    <img src="https://m.media-amazon.com/images/M/MV5BZGMxZTdjNDYtNDEzIz00ZWQwLTg2NjgtNDIyOWQ0NjFiNjM4XkEyXkFqcGdeQXVyMTUzMDUzNTI3._V1_FMjpg_UX1000_.jpg" class="card-img-top" alt="İki Kule">
                     <div class="card-body bg-white">
                         <h5 class="card-title fw-bold">2. İki Kule</h5>
                         <p class="card-text text-muted small">Çıkış Yılı: 2002</p>
@@ -125,7 +108,7 @@
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="card api-card shadow-sm border-0 rounded-3 overflow-hidden">
-                    <img src="https://upload.wikimedia.org/wikipedia/tr/0/07/Kral%C4%B1n_D%C3%B6n%C3%BC%C5%9F%C3%BC_afis.jpg" class="card-img-top" alt="Kralın Dönüşü">
+                    <img src="https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1000_.jpg" class="card-img-top" alt="Kralın Dönüşü">
                     <div class="card-body bg-white">
                         <h5 class="card-title fw-bold">3. Kralın Dönüşü</h5>
                         <p class="card-text text-muted small">Çıkış Yılı: 2003</p>
@@ -134,12 +117,11 @@
             </div>
         </div>
 
-        <!-- Hobbit Serisi -->
         <h5 class="text-muted small text-uppercase mb-3">Hobbit Serisi</h5>
         <div class="row g-4 mb-5">
             <div class="col-lg-4 col-md-6">
                 <div class="card api-card shadow-sm border-0 rounded-3 overflow-hidden">
-                    <img src="https://upload.wikimedia.org/wikipedia/tr/1/11/Hobbit_Beklenmedik_Yolculuk.jpg" class="card-img-top" alt="Beklenmedik Yolculuk">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMTcwNTE4MTUxMl5BMl5BanBnXkFtZTcwMDIyODM4OA@@._V1_FMjpg_UX1000_.jpg" class="card-img-top" alt="Beklenmedik Yolculuk">
                     <div class="card-body bg-white">
                         <h5 class="card-title fw-bold">1. Beklenmedik Yolculuk</h5>
                         <p class="card-text text-muted small">Çıkış Yılı: 2012</p>
@@ -148,7 +130,7 @@
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="card api-card shadow-sm border-0 rounded-3 overflow-hidden">
-                    <img src="https://upload.wikimedia.org/wikipedia/tr/6/6b/Hobbit_Smaug%27un_%C3%87orak_Topraklar%C4%B1_Afi%C5%9F.jpg" class="card-img-top" alt="Smaug'un Çorak Toprakları">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMzU0NDY0NDEzNV5BMl5BanBnXkFtZTgwOTg0OTM2MDE@._V1_FMjpg_UX1000_.jpg" class="card-img-top" alt="Smaug'un Çorak Toprakları">
                     <div class="card-body bg-white">
                         <h5 class="card-title fw-bold">2. Smaug'un Çorak Toprakları</h5>
                         <p class="card-text text-muted small">Çıkış Yılı: 2013</p>
@@ -157,7 +139,7 @@
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="card api-card shadow-sm border-0 rounded-3 overflow-hidden">
-                    <img src="https://upload.wikimedia.org/wikipedia/tr/b/be/Hobbit_Be%C5%9F_Ordunun_Sava%C5%9F%C4%B1_Afi%C5%9F.jpg" class="card-img-top" alt="Beş Ordunun Savaşı">
+                    <img src="https://m.media-amazon.com/images/M/MV5BODkyODQ4MDQ0NF5BMl5BanBnXkFtZTgwNTExMjI1MjE@._V1_FMjpg_UX1000_.jpg" class="card-img-top" alt="Beş Ordunun Savaşı">
                     <div class="card-body bg-white">
                         <h5 class="card-title fw-bold">3. Beş Ordunun Savaşı</h5>
                         <p class="card-text text-muted small">Çıkış Yılı: 2014</p>
@@ -166,12 +148,11 @@
             </div>
         </div>
 
-        <!-- Dune Serisi -->
         <h5 class="text-muted small text-uppercase mb-3">Dune Serisi</h5>
         <div class="row g-4">
             <div class="col-lg-4 col-md-6">
                 <div class="card api-card shadow-sm border-0 rounded-3 overflow-hidden">
-                    <img src="https://upload.wikimedia.org/wikipedia/tr/4/41/Dune_afis.jpg" class="card-img-top" alt="Dune: Çöl Gezegeni">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMDQ0NjgyN2YtNWViNS00YjA3LTkxNDktOTFlMjYyMWMzNjI0XkEyXkFqcGdeQXVyNTkzNDQ4ODc@._V1_FMjpg_UX1000_.jpg" class="card-img-top" alt="Dune: Çöl Gezegeni">
                     <div class="card-body bg-white">
                         <h5 class="card-title fw-bold">1. Dune: Çöl Gezegeni</h5>
                         <p class="card-text text-muted small">Çıkış Yılı: 2021</p>
@@ -180,7 +161,7 @@
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="card api-card shadow-sm border-0 rounded-3 overflow-hidden">
-                    <img src="https://upload.wikimedia.org/wikipedia/tr/a/a2/Dune_%C3%87%C3%B6l_Gezegeni_B%C3%B6l%C3%BCm_2.jpg" class="card-img-top" alt="Dune: Çöl Gezegeni Bölüm İki">
+                    <img src="https://m.media-amazon.com/images/M/MV5BODhlNjZhOTMtOWI2My00OWE4LThmZjItYmY4N2M0YmQ3Y2JmXkEyXkFqcGdeQXVyMTAxNzQ1NzI@._V1_FMjpg_UX1000_.jpg" class="card-img-top" alt="Dune: Çöl Gezegeni Bölüm İki">
                     <div class="card-body bg-white">
                         <h5 class="card-title fw-bold">2. Dune: Bölüm İki</h5>
                         <p class="card-text text-muted small">Çıkış Yılı: 2024</p>
@@ -190,7 +171,6 @@
         </div>
     </section>
 
-    <!-- Diziler Bölümü -->
     <section class="mb-5">
         <div class="d-flex justify-content-between align-items-end border-bottom pb-2 mb-4">
             <h3 class="text-dark mb-0"><i class="bi bi-tv text-danger me-2"></i>Başyapıt Diziler</h3>
@@ -203,7 +183,6 @@
         <div id="tv-container" class="row g-4 d-none"></div>
     </section>
 
-    <!-- Animeler Bölümü -->
     <section class="mb-5">
         <div class="d-flex justify-content-between align-items-end border-bottom pb-2 mb-4">
             <h3 class="text-dark mb-0"><i class="bi bi-collection-play-fill text-info me-2"></i>Animeler</h3>
@@ -247,7 +226,7 @@
                         col.className = 'col-lg-4 col-md-6';
                         col.innerHTML = `
                             <div class="card api-card shadow-sm border-0 rounded-3 overflow-hidden">
-                                <img src="${gameData.thumb}" class="card-img-top bg-dark" style="object-fit: contain; padding: 20px;" alt="${gameData.external}">
+                                <img src="${gameData.thumb}" class="card-img-top bg-dark game-img" alt="${gameData.external}">
                                 <div class="card-body bg-white d-flex flex-column">
                                     <h5 class="card-title fw-bold">${gameData.external}</h5>
                                     <p class="card-text text-muted small mt-2 mb-3"><strong>Arama Sonucu:</strong> CheapShark Oyun Veritabanı</p>
@@ -342,7 +321,6 @@
                             animeContainer.appendChild(col);
                         }
                     }
-                    // Rate Limit'e takılmamak için süreyi 1.2 saniyeye çıkardık. (Kesin Çözüm)
                     await delay(1200); 
 
                 } catch (err) {

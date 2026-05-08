@@ -1,0 +1,76 @@
+/* 1. Google Fonts İmport (Projeyi daha profesyonel gösterir) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* 2. Genel Ayarlar */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa; /* Bootstrap'in açık gri arka planı */
+}
+
+/* Pürüzsüz Kaydırma (Sayfa içi yönlendirmelerde yumuşak geçiş) */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 3. Navbar (Menü) Özelleştirmeleri */
+.navbar-nav .nav-link {
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Menü elemanlarının üzerine gelince hafif yukarı kayıp sarı olması */
+.navbar-nav .nav-link:hover {
+    color: #ffc107 !important; /* Bootstrap warning rengi */
+    transform: translateY(-2px);
+}
+
+/* 4. Genel Kart (Card) Hover Efektleri */
+/* Sitedeki tüm kartların üzerine gelince hafifçe havaya kalkması ve gölge vermesi */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+}
+
+/* 5. Buton Hover Efektleri */
+.btn {
+    transition: all 0.3s ease;
+}
+
+/* 6. İlgi Alanları Sayfası Özel Kartları */
+/* HTML içindeki <style> etiketinden buraya taşıdık ki kurala tam uyalım */
+.api-card img {
+    height: 350px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.steam-card {
+    background: linear-gradient(135deg, #171a21 0%, #1b2838 100%);
+    color: white;
+}
+
+.mal-card {
+    background: linear-gradient(135deg, #2e51a2 0%, #1a2e61 100%);
+    color: white;
+}
+
+/* 7. Şehrim Sayfası Slider Resmi Sabit Yükseklik Garantisi */
+#sehirSlider .carousel-item img {
+    height: 500px;
+    object-fit: cover;
+}
+
+/* 8. Footer Sabitleme Efekti */
+footer {
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
+
+/* Sadece Oyun API Resimlerine Özel Boyutlandırma */
+.api-card .game-img {
+    height: 150px !important; /* Yüksekliği diğerleri gibi 350px değil, 150px yap */
+    object-fit: contain !important; /* Resmi sündürme, orantılı şekilde kutuya sığdır */
+    padding: 15px !important; /* Kenarlardan biraz nefes aldır */
+}
