@@ -74,3 +74,17 @@ footer {
     object-fit: contain !important; /* Resmi sündürme, orantılı şekilde kutuya sığdır */
     padding: 15px !important; /* Kenarlardan biraz nefes aldır */
 }
+/* Özel Kaydırma Çubuğu (Scrollbar) */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+::-webkit-scrollbar-thumb {
+    background: #6c757d; 
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #ffc107; /* Menüdeki sarı uyumu */
+}
