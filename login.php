@@ -5,8 +5,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = trim($_POST['password'] ?? '');
 
     // Beklenen kullanıcı bilgileri (Projeye göre öğrenci no ve sakarya maili)
-    $dogru_mail = "b2412100001@sakarya.edu.tr";
-    $dogru_sifre = "b2412100001";
+    $dogru_mail = "b251210067@sakarya.edu.tr";
+    $dogru_sifre = "b251210067";
 
     // Güvenlik amaçlı sunucu tarafı boşluk kontrolü
     if (empty($email) || empty($password)) {
