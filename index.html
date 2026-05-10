@@ -4,83 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hakkımda | Web Teknolojileri Projesi</title>
-    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="d-flex flex-column min-vh-100">
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
   <div class="container">
-    <a class="navbar-brand" href="index.html">Web Projesi</a>
-    
+    <a class="navbar-brand fw-bold" href="index.html">Web Projesi</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
-    
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link active" href="index.html">Hakkında</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="cv.html">Özgeçmiş (CV)</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="sehrim.html">Şehrim</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="miras.html">Mirasımız</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="ilgi_alanlari.html">İlgi Alanlarım</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="iletisim.html">İletişim</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-warning" href="login.html">Giriş Yap</a>
-        </li>
+        <li class="nav-item"><a class="nav-link active" href="index.html">Hakkında</a></li>
+        <li class="nav-item"><a class="nav-link" href="cv.html">Özgeçmiş (CV)</a></li>
+        <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
+        <li class="nav-item"><a class="nav-link" href="miras.html">Mirasımız</a></li>
+        <li class="nav-item"><a class="nav-link" href="ilgi_alanlari.html">İlgi Alanlarım</a></li>
+        <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+        <li class="nav-item"><a class="nav-link text-warning fw-medium" href="login.html">Giriş Yap</a></li>
       </ul>
     </div>
   </div>
 </nav>
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-md-6">
-            <h2>Hakkımda</h2>
-            <p>Merhaba, ben Kerim Batıkan Deveci. Sakarya Üniversitesi'nde öğrenciyim ve Oyun Geliştirme alanına ilgi duyuyorum.</p>
+
+<main class="container my-5 fade-in">
+    <div class="row align-items-center bg-white p-4 p-md-5 rounded-4 shadow-sm section-card">
+        <div class="col-md-7 pe-md-5">
+            <h2 class="section-title">Hakkımda</h2>
+            <p class="lead text-secondary">Merhaba, ben <strong>Kerim Batıkan Deveci</strong>.</p>
+            <p>Sakarya Üniversitesi'nde Bilgisayar Mühendisliği öğrencisiyim. Teknolojiye olan merakım, özellikle <strong>Oyun Geliştirme</strong> ve <strong>Web Teknolojileri</strong> alanlarında kendimi geliştirmem için bana ilham veriyor.</p>
             
-            <h3 class="mt-4">Hobilerim ve Etkinliklerim</h3>
-            <ul class="list-group mb-4">
-                <li class="list-group-item">💻 Yazılım ve Kodlama</li>
-                <li class="list-group-item">🎮 Oyun Oynamak</li>
-                <li class="list-group-item">📚 Bilim Kurgu Kitapları Okumak</li>
+            <h3 class="mt-4 h5 fw-bold text-dark">Hobilerim ve Etkinliklerim</h3>
+            <ul class="list-unstyled custom-list mb-4">
+                <li><span class="icon">💻</span> Yazılım ve Kodlama Dünyası</li>
+                <li><span class="icon">🎮</span> Rekabetçi ve Hikayeli Oyunlar</li>
+                <li><span class="icon">📚</span> Bilim Kurgu ve Fantastik Edebiyat</li>
             </ul>
             
-            <a href="cv.html" class="btn btn-primary">Özgeçmişimi İncele</a>
-            <a href="https://github.com/TheHumanPandas" target="_blank" class="btn btn-dark">GitHub Profilim</a>
+            <div class="d-flex gap-2">
+                <a href="cv.html" class="btn btn-primary px-4 py-2 rounded-pill shadow-sm">Özgeçmişimi İncele</a>
+                <a href="https://github.com/TheHumanPandas" target="_blank" class="btn btn-outline-dark px-4 py-2 rounded-pill">GitHub Profilim</a>
+            </div>
         </div>
 
-        <div class="col-md-6">
-            <img src="images/profil.jpg" alt="Profil Fotoğrafım" class="img-fluid rounded shadow mb-4">
-            
-            <div class="ratio ratio-16x9 shadow">
-                <iframe src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" title="YouTube video" allowfullscreen></iframe>
+        <div class="col-md-5 text-center mt-5 mt-md-0">
+            <div class="image-container">
+                <img src="images/profil.jpg" alt="Profil Fotoğrafım" class="img-fluid rounded-circle shadow profile-img">
             </div>
         </div>
     </div>
-</div>
-    <div class="container mt-5">
-        <h1>Merhaba, Ben Batıkan</h1>
-        <p>Web Teknolojileri dersi proje ödevime hoş geldiniz.</p>
+
+</main>
+
+<footer class="bg-dark text-white text-center py-4 mt-auto">
+    <div class="container">
+        <p class="mb-0 opacity-75">&copy; 2025-2026 Bahar Dönemi - Web Teknolojileri Projesi</p>
     </div>
-<footer class="bg-dark text-white text-center py-3 mt-auto">
-        <div class="container">
-            <p class="mb-0">&copy; 2025-2026 Bahar Dönemi - Web Teknolojileri Projesi</p>
-        </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

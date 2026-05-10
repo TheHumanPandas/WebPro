@@ -40,7 +40,6 @@ html {
 }
 
 /* 6. İlgi Alanları Sayfası Özel Kartları */
-/* HTML içindeki <style> etiketinden buraya taşıdık ki kurala tam uyalım */
 .api-card img {
     height: 350px;
     object-fit: cover;
@@ -70,7 +69,7 @@ footer {
 
 /* Sadece Oyun API Resimlerine Özel Boyutlandırma */
 .api-card .game-img {
-    height: 150px !important; /* Yüksekliği diğerleri gibi 350px değil, 150px yap */
+    height: 150px !important; 
     object-fit: contain !important; /* Resmi sündürme, orantılı şekilde kutuya sığdır */
     padding: 15px !important; /* Kenarlardan biraz nefes aldır */
 }
@@ -87,4 +86,105 @@ footer {
 }
 ::-webkit-scrollbar-thumb:hover {
     background: #ffc107; /* Menüdeki sarı uyumu */
+}
+
+/* 9. Ana Sayfa Profil Fotoğrafı Özelleştirmeleri */
+.profile-img {
+    width: 250px; 
+    height: 250px;
+    object-fit: cover; /* Resmi orantılı sığdırır */
+    border: 5px solid #ffffff; /* Etrafına şık bir beyaz çerçeve ekler */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Fotoğrafa derinlik katan bir gölge */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Fareyle üzerine gelince yumuşak geçiş */
+}
+
+/* Profil fotoğrafının üzerine fare ile gelince (hover) çalışacak efekt */
+.profile-img:hover {
+    transform: scale(1.05); /* Fotoğrafı %5 büyütür */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3); /* Gölgeyi belirginleştirir */
+}
+
+
+/* 10. Sayfa Giriş Animasyonu */
+.fade-in {
+    animation: fadeIn ease 1.5s;
+    -webkit-animation: fadeIn ease 1.5s;
+}
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* 11. Arka Plan ve Kart Yapısı */
+body {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); /* Yumuşak geçiş */
+}
+
+.section-card {
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: all 0.4s ease;
+}
+
+/* 12. Başlık Altı Vurgu Çizgisi */
+.section-title {
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #212529;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 4px;
+    background-color: #ffc107; /* Sarı vurgu */
+    border-radius: 2px;
+}
+
+/* 13. Özel Liste Tasarımı */
+.custom-list li {
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    background: #fdfdfd;
+    border-radius: 10px;
+    border-left: 4px solid #0d6efd; /* Mavi kenarlık */
+    transition: transform 0.2s ease;
+}
+
+.custom-list li:hover {
+    transform: translateX(10px);
+    background: #f8f9fa;
+}
+
+.custom-list .icon {
+    margin-right: 10px;
+}
+
+/* 14. Profil Fotoğrafı (Boyut ve Efekt Güncelleme) */
+.profile-img {
+    width: 280px; /* Biraz daha büyüttük */
+    height: 280px;
+    object-fit: cover;
+    border: 8px solid #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.profile-img:hover {
+    transform: rotate(3deg) scale(1.05); /* Hafif dönme ve büyüme */
+}
+
+/* Butonları yuvarlak ve modern yapalım */
+.rounded-pill {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+/* Mirasımız Sayfası Slider Resmi Sabit Yükseklik */
+#mirasSlider .carousel-item img {
+    height: 400px;
+    object-fit: cover;
 }
